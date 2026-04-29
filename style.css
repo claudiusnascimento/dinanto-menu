@@ -1,0 +1,234 @@
+:root {
+    --cream: #f5f0e8;
+    --warm-white: #fdfaf4;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --brown-dark: #3b2a1a;
+    --brown-mid: #6b4c2a;
+    --brown-light: #a07850;
+    --text: #2c1f0e;
+    --separator: #c8a96e;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cream);
+    background-image:
+        radial-gradient(
+            ellipse at 20% 10%,
+            rgba(184, 134, 11, 0.08) 0%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 80% 90%,
+            rgba(107, 76, 42, 0.08) 0%,
+            transparent 50%
+        );
+    font-family: "Lato", sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 40px 20px 60px;
+}
+
+.menu-wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+}
+
+/* ── Header ── */
+.header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--separator);
+    position: relative;
+}
+
+.header::before,
+.header::after {
+    content: "✦";
+    position: absolute;
+    bottom: -12px;
+    font-size: 14px;
+    color: var(--gold);
+    background: var(--cream);
+    padding: 0 10px;
+}
+.header::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header::after {
+    display: none;
+}
+
+.logo-tag {
+    font-family: "Lato", sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: block;
+    margin-bottom: 12px;
+}
+
+.header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(36px, 8vw, 64px);
+    font-weight: 700;
+    color: var(--brown-dark);
+    line-height: 1.1;
+}
+
+.header h1 em {
+    font-style: italic;
+    color: var(--brown-mid);
+}
+
+.subtitle {
+    margin-top: 10px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    color: var(--brown-light);
+    text-transform: uppercase;
+}
+
+/* ── Category Block ── */
+.category {
+    margin-bottom: 42px;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.category-name {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--brown-dark);
+    white-space: nowrap;
+}
+
+.category-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+        to right,
+        var(--separator),
+        transparent
+    );
+}
+
+/* ── Item Row ── */
+.item {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 9px 0;
+    border-bottom: 1px dotted rgba(184, 134, 11, 0.25);
+}
+.item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.item-dots {
+    flex: 1;
+    border-bottom: 1.5px dotted var(--brown-light);
+    margin-bottom: 4px;
+    min-width: 20px;
+}
+
+.item-prices {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.price-tag {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--warm-white);
+    border: 1px solid var(--separator);
+    border-radius: 4px;
+    padding: 3px 8px;
+    min-width: 72px;
+}
+
+.price-value {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.price-weight {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--brown-light);
+    text-transform: uppercase;
+}
+
+/* ── Footer ── */
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 24px;
+    border-top: 1px solid var(--separator);
+    font-size: 12px;
+    color: var(--brown-light);
+    letter-spacing: 1px;
+}
+
+.footer strong {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    color: var(--brown-mid);
+    margin-bottom: 4px;
+}
+
+@media print {
+    body {
+        background: white;
+        padding: 20px;
+    }
+    .price-tag {
+        border: 1px solid #999;
+    }
+}
+
+@media (max-width: 480px) {
+    .item {
+        flex-wrap: wrap;
+    }
+    .item-dots {
+        display: none;
+    }
+    .item-name {
+        flex: 1;
+    }
+    .item-prices {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 4px;
+    }
+}
