@@ -233,6 +233,10 @@ body {
     margin-top: 12px;
 }
 
+.contact-links img {
+    max-width: 26px;
+}
+
 .contact-link {
     display: inline-flex;
     align-items: center;
@@ -280,7 +284,7 @@ body {
     }
 }
 
-@media (max-width: 480px) {
+/* @media (max-width: 420px) {
     .item {
         flex-wrap: wrap;
     }
@@ -295,4 +299,4 @@ body {
         justify-content: flex-end;
         margin-top: 4px;
     }
-}
+} */
