@@ -18,7 +18,7 @@ const menu = [
                 ]
             },
             {
-                name: 'Queijo',
+                name: 'Queijo **',
                 prices: [
                     { value: '75,00', weight: 'kg' },
                     { value: '32,00', weight: '400 g' }
@@ -72,7 +72,7 @@ const menu = [
                 ]
             },
             {
-                name: 'Linguini',
+                name: 'Linguini **',
                 prices: [
                     { value: '60,00', weight: 'kg' },
                     { value: '24,00', weight: '400 g' }
