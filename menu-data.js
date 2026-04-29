@@ -1,99 +1,81 @@
 const menu = [
     {
-        category: 'Massas Lisas',
+        category: 'Agnolines',
+        img: './images/agnoline.jpg',
         products: [
             {
-                name: 'Espaguete',
+                name: 'Frango',
                 prices: [
-                    { value: '18,00', weight: '1 kg' },
-                    { value: '8,00', weight: '400 g' }
+                    { value: '72,00', weight: 'kg' },
+                    { value: '30,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Talharim',
+                name: 'Carne',
                 prices: [
-                    { value: '18,00', weight: '1 kg' },
-                    { value: '8,00', weight: '400 g' }
+                    { value: '86,00', weight: 'kg' },
+                    { value: '35,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Fetuccine',
+                name: 'Queijo',
                 prices: [
-                    { value: '20,00', weight: '1 kg' },
-                    { value: '9,00', weight: '400 g' }
-                ]
-            },
-            {
-                name: 'Linguine',
-                prices: [
-                    { value: '20,00', weight: '1 kg' },
-                    { value: '9,00', weight: '400 g' }
+                    { value: '75,00', weight: 'kg' },
+                    { value: '32,00', weight: '400 g' }
                 ]
             }
         ]
     },
     {
-        category: 'Massas Recheadas',
+        category: 'Especiais & Raviolis',
+        img: './images/ravioli.jpg',
         products: [
             {
-                name: 'Capeletti de Carne',
+                name: 'Tortei de Moranga Cabotiá',
                 prices: [
-                    { value: '28,00', weight: '1 kg' },
-                    { value: '12,00', weight: '400 g' }
+                    { value: '55,00', weight: 'kg' },
+                    { value: '22,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Capeletti de Frango',
+                name: 'Ravioli de Queijo **',
                 prices: [
-                    { value: '28,00', weight: '1 kg' },
-                    { value: '12,00', weight: '400 g' }
+                    { value: '80,00', weight: 'kg' },
+                    { value: '32,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Tortellini de Queijo',
+                name: 'Ravioli Espinafre com Ricota **',
                 prices: [
-                    { value: '30,00', weight: '1 kg' },
-                    { value: '13,00', weight: '400 g' }
+                    { value: '70,00', weight: 'kg' },
+                    { value: '28,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Ravioli de Ricota e Espinafre',
+                name: 'Ravioli Marguerita **',
                 prices: [
-                    { value: '32,00', weight: '1 kg' },
-                    { value: '14,00', weight: '400 g' }
+                    { value: '75,00', weight: 'kg' },
+                    { value: '30,00', weight: '400 g' }
                 ]
             }
         ]
     },
     {
-        category: 'Massas Especiais',
+        category: 'Massas Longas',
+        img: './images/macarronada.jpeg',
         products: [
             {
-                name: 'Nhoque de Batata',
+                name: 'Talharim / Espaguete',
                 prices: [
-                    { value: '22,00', weight: '1 kg' },
-                    { value: '10,00', weight: '400 g' }
+                    { value: '45,00', weight: 'kg' },
+                    { value: '18,00', weight: '400 g' }
                 ]
             },
             {
-                name: 'Lasanha (folhas)',
+                name: 'Linguini',
                 prices: [
-                    { value: '25,00', weight: '1 kg' },
-                    { value: '11,00', weight: '400 g' }
-                ]
-            },
-            {
-                name: 'Fusilli Integral',
-                prices: [
-                    { value: '24,00', weight: '1 kg' },
-                    { value: '11,00', weight: '400 g' }
-                ]
-            },
-            {
-                name: 'Pappardelle ao Açafrão',
-                prices: [
-                    { value: '35,00', weight: '1 kg' },
-                    { value: '16,00', weight: '400 g' }
+                    { value: '60,00', weight: 'kg' },
+                    { value: '24,00', weight: '400 g' }
                 ]
             }
         ]
@@ -105,8 +87,12 @@ function renderMenu() {
     const categoriesHTML = menu.map(category => `
         <section class="category">
             <div class="category-header">
-                <h2 class="category-name">${category.category}</h2>
+                <img src="${category.img}" alt="${category.category}" class="category-image" />
                 <div class="category-line"></div>
+                <h2 class="category-name">${category.category}</h2>
+            </div>
+            <div class="item-weights">
+                <div>1Kg <span>|</span> 400g</div>
             </div>
             ${category.products.map(product => `
                 <div class="item">
@@ -116,7 +102,6 @@ function renderMenu() {
                         ${product.prices.map(price => `
                             <div class="price-tag">
                                 <span class="price-value">R$ ${price.value}</span>
-                                <span class="price-weight">${price.weight}</span>
                             </div>
                         `).join('')}
                     </div>
